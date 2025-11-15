@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+Landing pages for Talent Match
+
 ```sh
 npm create astro@latest -- --template basics
 ```
