@@ -12,9 +12,12 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.15.8",
+    "flyonui": "^2.4.1",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.407",
+    "@iconify/tailwind4": "^1.1.0",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   }

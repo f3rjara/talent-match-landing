@@ -1,0 +1,4 @@
+{
+	"sonar.css.file.suffixes": "",
+	"sonar.exclusions": "src/styles/**"
+}

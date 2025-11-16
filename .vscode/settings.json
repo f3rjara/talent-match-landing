@@ -4,5 +4,7 @@
 	"[astro]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"prettier.documentSelectors": ["**/*.astro"]
+	"prettier.documentSelectors": ["**/*.astro"],
+	"css.validate": false,
+	"css.customData": [".vscode/css-custom-data.json"]
 }

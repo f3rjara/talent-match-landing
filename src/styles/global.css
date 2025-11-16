@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@plugin "flyonui" {
+	themes:
+		gourmet --default,
+		pastel --prefersdark;
+}
+@import "flyonui/variants.css";
+@plugin "@iconify/tailwind4";
