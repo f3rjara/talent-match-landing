@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="es" class="base-layout">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>Talent Match - Encuentra el Trabajo de tus Sueños | Talento Match</title>
+		<meta name="description" content="Encuentra el empleo ideal con Talent Match. Miles de empresas te buscan activamente. Asistente personal 24/7 que procesa cientos de ofertas y te conecta solo con vacantes que coinciden con tu experiencia y expectativas." />
+		<meta name="keywords" content="búsqueda de empleo, ofertas laborales, trabajo ideal, vacantes, Talento Match, talent match, bolsa de empleo, matching laboral, oportunidades de trabajo" />
+		<meta name="author" content="Talento Match" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://talento-match.com" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://talento-match.com" />
+		<meta property="og:title" content="Talent Match - Encuentra el Trabajo de tus Sueños" />
+		<meta property="og:description" content="Deja que miles de empresas te vean y te contacten de inmediato. Crea relevancia a tu hoja de vida y recibe ofertas laborales que encajen contigo." />
+		<meta property="og:image" content="https://talento-match.com/og-image.jpg" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:site_name" content="Talent Match" />
+		
+		<!-- Twitter -->
+		<!-- X (Twitter) -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://talento-match.com" />
+		<meta name="twitter:title" content="Talent Match - Encuentra el Trabajo de tus Sueños" />
+		<meta name="twitter:description" content="Asistente personal 24/7 que procesa cientos de ofertas laborales y te conecta solo con vacantes que coinciden con tu perfil." />
+		<meta name="twitter:image" content="https://talento-match.com/x-image.jpg" />
+
+		<!-- Schema.org Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "Talent Match",
+				"url": "https://talento-match.com",
+				"description": "Plataforma de búsqueda de empleo inteligente que conecta talento con empresas",
+				"publisher": {
+					"@type": "Organization",
+					"name": "Talento Match",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://talento-match.com/logo.png"
+					}
+				},
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://talento-match.com/buscar?q={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Service",
+				"serviceType": "Plataforma de Búsqueda de Empleo",
+				"provider": {
+					"@type": "Organization",
+					"name": "Talento Match"
+				},
+				"description": "Asistente personal 24/7 que procesa cientos de ofertas al día y te conecta solo con vacantes que cumplan con tu experiencia, formación y expectativas salariales",
+				"areaServed": "ES",
+				"availableLanguage": "Spanish"
+			}
+		</script>
+	</head>
+	<body class="base-layout">
+		<main class="main-content-base-layout"><slot /></main>
+	</body>
+</html>
