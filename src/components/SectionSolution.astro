@@ -1,0 +1,31 @@
+---
+import LottieAnimation from "./LottieAnimation.astro";
+import robotAnimation from "@assets/json/robot-computed.json";
+---
+
+<section
+	id="nuestra-solucion"
+	class="bg-contrast-section flex flex-col md:flex-row py-20"
+	aria-label="Asi puede ayudarte Talento Match">
+	<div class="px-6 md:px-12 lg:px-24 content-section w-full md:w-1/2">
+		<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-base-content mb-6">
+			Cómo funciona <br />
+			<span class="accent-tm-cyan">Talento</span>
+			<span class="accent-tm-blue">Match</span>
+		</h2>
+		<p class="text-lg md:text-xl text-base-content/80 leading-relaxed">
+			Talento Match analiza perfiles y vacantes con IA para identificar el mejor match. Procesamos
+			miles de datos al instante y conectamos a las empresas con los candidatos ideales, optimizando
+			todo el proceso de selección de forma rápida y precisa.
+		</p>
+		<a
+			href="https://app.talento-match.com"
+			rel="noopener noreferrer"
+			class="btn btn-gradient mt-6 hover:bg-base-100">
+			Quiero comenzar ahora
+		</a>
+	</div>
+	<div class="image-section w-full md:w-1/2 flex items-center justify-center">
+		<LottieAnimation animationData={robotAnimation} className="w-full h-full max-w-md" />
+	</div>
+</section>

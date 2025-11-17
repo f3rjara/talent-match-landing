@@ -1,0 +1,35 @@
+---
+interface Props {
+	name: string;
+	role: string;
+	testimonial: string;
+	imageUrl?: string;
+}
+
+const { name, role, testimonial, imageUrl = "https://i.pravatar.cc/150" } = Astro.props;
+---
+
+<div class="relative me-5">
+	<div class="card w-full h-full absolute top-2 left-2 bg-blue-700 opacity-50"></div>
+	<div class="card w-full h-full absolute top-4 left-4 bg-blue-600 opacity-30"></div>
+
+	<div class="card w-full relative mt-8 z-10">
+		<div class="card-body">
+			<div class="flex items-start gap-6 mb-3">
+				<div class="flex-shrink-0">
+					<img
+						src={imageUrl}
+						alt={`Foto de ${name}`}
+						class="w-32 h-32 rounded-2xl border-4 border-white object-cover shadow-lg -mt-12"
+					/>
+				</div>
+				<div class="grow mt-3">
+					<h5 class="text-xl md:text-3xl font-bold whitespace-nowrap">{name}</h5>
+					<p class="text-md md:text-xl">{role}</p>
+				</div>
+				<span class="icon-[tabler--quote] size-16 text-base-content/20 accent-tm-cyan"></span>
+			</div>
+			<p class="text-base italic leading-relaxed max-w-[32rem] mb-2">{testimonial}</p>
+		</div>
+	</div>
+</div>

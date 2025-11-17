@@ -6,3 +6,45 @@
 }
 @import "flyonui/variants.css";
 @plugin "@iconify/tailwind4";
+
+/* Clases de acento de marca */
+.accent-tm-cyan {
+	@apply text-cyan-600;
+}
+
+.accent-tm-blue {
+	@apply text-blue-700;
+}
+
+[data-theme="pastel"] .accent-tm-cyan {
+	@apply text-cyan-500;
+}
+
+[data-theme="pastel"] .accent-tm-blue {
+	@apply text-blue-500;
+}
+
+/* Scroll arrow */
+.scroll-arrow {
+	@apply bg-blue-700;
+}
+
+.scroll-arrow:hover {
+	@apply bg-blue-500;
+}
+
+[data-theme="pastel"] .scroll-arrow {
+	@apply bg-blue-400;
+}
+
+[data-theme="pastel"] .scroll-arrow:hover {
+	@apply bg-blue-300;
+}
+
+.bg-contrast-section {
+	@apply bg-gray-100;
+}
+
+[data-theme="pastel"] .bg-contrast-section {
+	@apply bg-zinc-700;
+}

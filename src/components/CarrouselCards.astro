@@ -1,0 +1,57 @@
+---
+import SingleCardTalent from "./SingleCardTalent.astro";
+
+const testimonials = [
+	{
+		name: "Dario Agreda",
+		role: "Abogado",
+		testimonial:
+			"Una plataforma excelente. Las ofertas que recibo encajan perfectamente con mi experiencia y el sistema me ayuda a identificar buenas oportunidades.",
+		imageUrl: "/images/dario-agreda.webp",
+	},
+	{
+		name: "Jenny Zambrano",
+		role: "Jefe de Tesorería",
+		testimonial:
+			"Talento Match filtra todo por mí. Solo veo ofertas que realmente coinciden con mi perfil, y la información que me dan me ayuda a tomar mejores decisiones.",
+		imageUrl: "/images/jenny-zambrano.webp",
+	},
+	{
+		name: "Carlos Marroquín",
+		role: "Cirujano Maxilofacial",
+		testimonial:
+			"Talento Match nos permitió identificar candidatos en minutos. La IA nos ayuda a encontrar 	perfiles realmente relevantes y nos ahorra horas de revisión manual.",
+		imageUrl: "/images/carlos-marroquin.webp",
+	},
+	{
+		name: "Daniel Cabrera",
+		role: "Desarrollador de Software",
+		testimonial:
+			"Después de meses buscando trabajo, Talento Match me ayudó a encontrar la posición ideal. El matching es preciso y me ahorró muchísimo tiempo en aplicaciones.",
+		imageUrl: "/images/daniel-cabrera.webp",
+	},
+];
+---
+
+<div
+	id="auto-play"
+	data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 4500, "pauseOnHover": true, "dotsItemClasses": "carousel-dot carousel-active:bg-secondary"  }'
+	class="relative w-full">
+	<div class="carousel h-80">
+		<div class="carousel-body opacity-0 h-full">
+			{
+				testimonials.map((testimonial) => (
+					<div class="carousel-slide mx-2">
+						<SingleCardTalent
+							name={testimonial.name}
+							role={testimonial.role}
+							testimonial={testimonial.testimonial}
+							imageUrl={testimonial.imageUrl}
+						/>
+					</div>
+				))
+			}
+		</div>
+	</div>
+	<div class="carousel-pagination absolute bottom-3 end-0 start-0 flex justify-center gap-3"></div>
+</div>

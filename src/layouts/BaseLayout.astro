@@ -1,6 +1,11 @@
 ---
-import TopNavBar from "@components/TopNavBar.astro";
 import "../styles/global.css";
+import TopNavBar from "@components/TopNavBar.astro";
+import Footer from "@components/Footer.astro";
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +17,7 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- SEO Meta Tags -->
-		<title>Talent Match - Encuentra el Trabajo de tus Sueños | Talento Match</title>
+		<title>{title}</title>
 		<meta
 			name="description"
 			content="Encuentra el empleo ideal con Talent Match. Miles de empresas te buscan activamente. Asistente personal 24/7 que procesa cientos de ofertas y te conecta solo con vacantes que coinciden con tu experiencia y expectativas."
@@ -90,7 +95,14 @@ import "../styles/global.css";
 	<body class="base-layout">
 		<TopNavBar />
 		<main class="main-content-base-layout"><slot /></main>
+		<Footer />
 	</body>
 </html>
+<style is:global>
+	* {
+		scroll-behavior: smooth;
+	}
+</style>
 <!-- FlyonUI -->
 <script is:inline src="../node_modules/flyonui/dist/collapse.js"></script>
+<script is:inline src="../node_modules/flyonui/dist/carousel.js"></script>

@@ -1,0 +1,36 @@
+---
+interface Props {
+	animationData: object;
+	className?: string;
+}
+
+const { animationData, className = "" } = Astro.props;
+const containerId = `lottie-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div id={containerId} class={className}></div>
+
+<script>
+	import lottie from "lottie-web";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const containers = document.querySelectorAll('[id^="lottie-"]');
+
+		containers.forEach((container) => {
+			const animationData = (container as HTMLElement).dataset.animation;
+			if (animationData && container instanceof HTMLElement) {
+				lottie.loadAnimation({
+					container: container,
+					renderer: "svg",
+					loop: true,
+					autoplay: true,
+					animationData: JSON.parse(animationData),
+				});
+			}
+		});
+	});
+</script>
+
+<script define:vars={{ containerId, animationData }} is:inline>
+	document.getElementById(containerId).dataset.animation = JSON.stringify(animationData);
+</script>

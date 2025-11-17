@@ -1,0 +1,31 @@
+---
+import CarrouselCards from "./CarrouselCards.astro";
+---
+
+<section
+	id="testimonios"
+	class="bg-contrast-section flex flex-col md:flex-row py-20"
+	aria-label="Asi puede ayudarte Talento Match">
+	<div class="px-6 md:px-12 lg:px-24 content-section w-full md:w-1/2">
+		<h2 class="text-2xl md:text-3xl font-bold text-base-content mb-6">
+			Talentos que ya dieron el <br />
+			<span class="accent-tm-cyan">siguiente paso</span>
+		</h2>
+		<p class="text-lg md:text-xl text-base-content/80 leading-relaxed">
+			Ellos encontraron su oportunidad perfecta gracias a
+			<span class="font-bold">Talento Match</span>. Nuestra plataforma hace que conectar con las
+			mejores empresas sea
+			<span class="accent-tm-cyan font-semibold">más fácil que nunca.</span>
+		</p>
+		<a
+			href="https://app.talento-match.com"
+			rel="noopener noreferrer"
+			class="btn btn-gradient mt-6 hover:bg-base-100">
+			Quiero comenzar ahora
+		</a>
+	</div>
+	<div
+		class="image-section w-full md:w-1/2 flex items-center justify-center px-6 md:ps-0 md:pe-8 mt-10 md:mt-0">
+		<CarrouselCards />
+	</div>
+</section>
