@@ -1,10 +1,11 @@
 ---
 import arrowIcon from "@assets/svg/down-arrow.svg";
+import { getAssetUrl } from "@utils/publicPaths";
 ---
 
 <header
 	id="inicio"
-	class="min-h-[calc(100dvh-4rem)] bg-[url('/images/fondo.webp')] bg-cover bg-center flex flex-col justify-between">
+	class="min-h-[calc(100dvh-4rem)] hero-bg bg-cover bg-center flex flex-col justify-between">
 	<div></div>
 	<div class="flex flex-col items-center gap-1">
 		<h1 class="text-2xl md:text-3xl lg:text-4 xl mb-3 border-custom-purple text-center leading-11">
@@ -36,7 +37,12 @@ import arrowIcon from "@assets/svg/down-arrow.svg";
 	</div>
 </header>
 
-<style>
+<style
+	define:vars={{
+		fondoUrl: `url(${getAssetUrl("/images/fondo.webp")})`,
+		fondoDarkUrl: `url(${getAssetUrl("/images/fondo-dark.webp")})`,
+	}}
+>
 	@reference "tailwindcss";
 
 	.scroll-arrow {
@@ -49,8 +55,12 @@ import arrowIcon from "@assets/svg/down-arrow.svg";
 		@apply bg-blue-300;
 	}
 
-	/* Cambiar fondo en modo oscuro */
-	:global([data-theme="pastel"]) #inicio {
-		background-image: url("/images/fondo-dark.webp");
+	/* Cambiar fondo en modo oscuro y claro*/
+	.hero-bg {
+		background-image: var(--fondoUrl);
+	}
+
+	:global([data-theme="pastel"]) .hero-bg {
+		background-image: var(--fondoDarkUrl);
 	}
 </style>
