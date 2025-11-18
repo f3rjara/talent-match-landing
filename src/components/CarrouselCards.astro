@@ -1,5 +1,6 @@
 ---
 import SingleCardTalent from "./SingleCardTalent.astro";
+import { getAssetUrl } from "@utils/publicPaths";
 
 const testimonials = [
 	{
@@ -7,28 +8,28 @@ const testimonials = [
 		role: "Abogado",
 		testimonial:
 			"Una plataforma excelente. Las ofertas que recibo encajan perfectamente con mi experiencia y el sistema me ayuda a identificar buenas oportunidades.",
-		imageUrl: "/images/dario-agreda.webp",
+		imageUrl: getAssetUrl("/images/dario-agreda.webp"),
 	},
 	{
 		name: "Jenny Zambrano",
 		role: "Jefe de Tesorería",
 		testimonial:
 			"Talento Match filtra todo por mí. Solo veo ofertas que realmente coinciden con mi perfil, y la información que me dan me ayuda a tomar mejores decisiones.",
-		imageUrl: "/images/jenny-zambrano.webp",
+		imageUrl: getAssetUrl("/images/jenny-zambrano.webp"),
 	},
 	{
 		name: "Carlos Marroquín",
 		role: "Cirujano Maxilofacial",
 		testimonial:
 			"Talento Match nos permitió identificar candidatos en minutos. La IA nos ayuda a encontrar 	perfiles realmente relevantes y nos ahorra horas de revisión manual.",
-		imageUrl: "/images/carlos-marroquin.webp",
+		imageUrl: getAssetUrl("/images/carlos-marroquin.webp"),
 	},
 	{
 		name: "Daniel Cabrera",
 		role: "Desarrollador de Software",
 		testimonial:
 			"Después de meses buscando trabajo, Talento Match me ayudó a encontrar la posición ideal. El matching es preciso y me ahorró muchísimo tiempo en aplicaciones.",
-		imageUrl: "/images/daniel-cabrera.webp",
+		imageUrl: getAssetUrl("/images/daniel-cabrera.webp"),
 	},
 ];
 ---
