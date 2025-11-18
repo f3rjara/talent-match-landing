@@ -1,3 +1,7 @@
+---
+import { getAssetUrl } from "@utils/publicPaths";
+---
+
 <nav
 	class="navbar md:h-15 sticky start-0 top-0 z-1 shadow-base-300/20 shadow-sm backdrop-blur-2xl bg-transparent">
 	<div class="w-full md:flex md:items-center md:gap-2">
@@ -5,7 +9,7 @@
 			<div class="navbar-start items-center justify-between max-md:w-full">
 				<a
 					class="link text-base-content link-neutral text-2xl font-bold no-underline whitespace-nowrap"
-					href="/">
+					href={getAssetUrl("/")}>
 					<span class="accent-tm-cyan">Talento</span>
 					<span class="accent-tm-blue">Match</span>
 				</a>
@@ -35,8 +39,8 @@
 			id="default-navbar-collapse"
 			class="md:navbar-end collapse hidden grow basis-full overflow-hidden transition-[height] duration-300 max-md:w-full">
 			<ul class="menu md:menu-horizontal gap-2 p-0 text-base max-md:mt-2">
-				<li><a href="/empresas">Soy una empresa</a></li>
-				<li><a href="/candidatos">Soy un candidato</a></li>
+				<li><a href={getAssetUrl("/empresas")}>Soy una empresa</a></li>
+				<li><a href={getAssetUrl("/candidatos")}>Soy un candidato</a></li>
 				<li><a href="https://app.talento-match.com">Acceder</a></li>
 				<li class="justify-center hidden md:flex">
 					<button
