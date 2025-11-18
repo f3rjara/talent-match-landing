@@ -1,0 +1,48 @@
+# .github/workflows/deploy.yml
+
+name: Deploy Astro to GitHub Pages
+
+on:
+  # Dispara el flujo de trabajo en cada push a la rama 'main' (puedes cambiar 'main' por tu rama principal)
+  push:
+    branches: ["main"]
+  # Permite ejecutar este flujo de trabajo manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Establece permisos para que el GITHUB_TOKEN pueda desplegar a GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite una sola ejecución concurrente
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Usa Node.js 20 o superior
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        # Asegúrate de que tu script "build" en package.json genera la salida estática
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Directorio de salida por defecto de Astro (dist/)
+          path: "./dist"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
