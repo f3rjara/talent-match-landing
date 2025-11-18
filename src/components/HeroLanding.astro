@@ -1,0 +1,56 @@
+---
+import arrowIcon from "@assets/svg/down-arrow.svg";
+---
+
+<header
+	id="inicio"
+	class="min-h-[calc(100dvh-4rem)] bg-[url('/images/fondo.webp')] bg-cover bg-center flex flex-col justify-between">
+	<div></div>
+	<div class="flex flex-col items-center gap-1">
+		<h1 class="text-2xl md:text-3xl lg:text-4 xl mb-3 border-custom-purple text-center leading-11">
+			Tu próximo gran trabajo está a un clic con <br />
+			<span class="font-bold">
+				<span class="accent-tm-cyan">Talento</span>
+				<span class="accent-tm-blue">Match</span>
+			</span>
+		</h1>
+		<p class="md:text-2xl text-md text-center">
+			Destaca al instante. La IA <span class="underline">te conecta </span> con las <span
+				class="font-bold">ofertas ideales.</span
+			>
+		</p>
+
+		<a
+			href="https://app.talento-match.com"
+			rel="noopener noreferrer"
+			class="btn btn-gradient mt-6 hover:bg-base-100">
+			Quiero comenzar ahora
+		</a>
+	</div>
+	<div class="flex justify-center mb-10">
+		<a
+			href="#problematica"
+			class="scroll-arrow p-4 rounded-full animate-bounce motion-reduce:animate-none">
+			<img src={arrowIcon.src} class="size-6" alt="Scroll para ver más contenido" />
+		</a>
+	</div>
+</header>
+
+<style>
+	@reference "tailwindcss";
+
+	.scroll-arrow {
+		@apply bg-blue-700;
+	}
+	.scroll-arrow:hover {
+		@apply bg-blue-500;
+	}
+	:global([data-theme="pastel"]) .scroll-arrow:hover {
+		@apply bg-blue-300;
+	}
+
+	/* Cambiar fondo en modo oscuro */
+	:global([data-theme="pastel"]) #inicio {
+		background-image: url("/images/fondo-dark.webp");
+	}
+</style>
