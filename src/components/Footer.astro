@@ -1,3 +1,7 @@
+---
+import { getAssetUrl } from "@utils/publicPaths";
+---
+
 <div class="w-full">
 	<footer class="footer bg-base-200/60 p-10">
 		<form class="gap-6">
@@ -21,23 +25,31 @@
 			</p>
 		</form>
 		<nav class="text-base-content">
-			<h6 class="footer-title">Nosotros</h6>
-			<a href="/precios-empresas" class="link link-hover">Precios</a>
-			<a href="/quienes-somos" class="link link-hover">Quienes somos</a>
-			<a href="/preguntas-frecuentes" class="link link-hover">Preguntas frecuentes</a>
-			<a href="/terminos-y-condiciones" class="link link-hover">Avisos legales</a>
+			<h4 class="footer-title">Recursos</h4>
+			<nav class="flex flex-col gap-2">
+				<a href={getAssetUrl("/precios-empresas")} class="link link-hover">Precios</a>
+				<a href={getAssetUrl("/quienes-somos")} class="link link-hover">Quienes somos</a>
+				<a href={getAssetUrl("/preguntas-frecuentes")} class="link link-hover"
+					>Preguntas frecuentes</a
+				>
+				<a href={getAssetUrl("/terminos-y-condiciones")} class="link link-hover">Avisos legales</a>
+			</nav>
 		</nav>
 		<nav class="text-base-content">
 			<h6 class="footer-title">Hacer Match</h6>
-			<a href="/contacto" class="link link-hover">Contáctanos</a>
-			<a href="/contacto#asesoria" class="link link-hover">Asesoría</a>
-			<a href="/politica-de-privacidad" class="link link-hover">Política de privacidad</a>
+			<a href={getAssetUrl("/contacto")} class="link link-hover">Contáctanos</a>
+			<a href={getAssetUrl("/contacto#asesoria")} class="link link-hover">Asesoría</a>
+			<a href={getAssetUrl("/politica-de-privacidad")} class="link link-hover"
+				>Política de privacidad</a
+			>
 		</nav>
 	</footer>
 	<footer class="footer bg-base-200/60 border-base-content/25 border-t px-6 py-4">
 		<div class="flex w-full items-center justify-between">
 			<aside class="grid-flow-col items-center">
-				<p>©2025 <a class="link link-hover font-medium" href="#">Talento Match</a></p>
+				<p>
+					©2025 <a class="link link-hover font-medium" href={getAssetUrl("/")}>Talento Match</a>
+				</p>
 			</aside>
 			<div class="flex h-5 gap-4">
 				<a href="#" class="link" aria-label="LinkedIn Link">
