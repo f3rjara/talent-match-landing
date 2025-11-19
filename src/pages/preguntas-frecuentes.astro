@@ -1,27 +1,15 @@
 ---
+import AccordionFrecuentlyQuest from "@components/AccordionFrecuentlyQuest.astro";
+import SectionSolution from "@components/SectionSolution.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Términos y Condiciones | Talento Match">
+<BaseLayout title="Preguntas Frecuentes | Talento Match">
+	<SectionSolution />
 	<section class="container mx-auto px-6 py-12">
-		<h1 class="text-4xl font-bold mb-8 text-center">Términos y Condiciones</h1>
-		<article class="prose lg:prose-xl max-w-none">
-			<!-- Aquí va el contenido de los términos y condiciones -->
-			<p>
-				Bienvenido a Talento Match. Al utilizar nuestra plataforma, aceptas cumplir con los
-				siguientes términos y condiciones. Por favor, léelos cuidadosamente.
-			</p>
-			<h2>1. Uso de la Plataforma</h2>
-			<p>
-				Talento Match proporciona una plataforma para conectar talentos con oportunidades laborales.
-				Al registrarte, garantizas que la información proporcionada es veraz y actualizada.
-			</p>
-			<h2>2. Privacidad</h2>
-			<p>
-				Tu privacidad es importante para nosotros. Consulta nuestra Política de Privacidad para
-				entender cómo recopilamos, usamos y protegemos tu información personal.
-			</p>
-			<!-- Más secciones según sea necesario -->
-		</article>
+		<h1 class="text-4xl font-bold mb-8 text-center">
+			Preguntas <span class="accent-tm-cyan">Frecuentes</span>
+		</h1>
+		<AccordionFrecuentlyQuest />
 	</section>
 </BaseLayout>
