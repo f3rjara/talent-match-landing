@@ -1,0 +1,26 @@
+---
+interface Props {
+	icon: string;
+	title: string;
+	text: string;
+}
+const { icon, title, text } = Astro.props;
+---
+
+<div class="card card-xs sm:max-w-s bg-contrast-section p-4 rounded-4xl">
+	<div class="card-header flex items-center gap-4">
+		<div class="avatar">
+			{
+				icon === "brand-whatsapp" && (
+					<span class="icon-[tabler--brand-whatsapp] text-accent-tm-cyan size-8" />
+				)
+			}
+			{icon === "mail" && <span class="icon-[tabler--mail] text-accent-tm-cyan size-8" />}
+			{icon === "world" && <span class="icon-[tabler--world] text-accent-tm-cyan size-8" />}
+		</div>
+		<div>
+			<h3 class="text-2xl mb-1 accent-tm-cyan">{title}</h3>
+			<p class="text-base-content/75 text-lg">{text}</p>
+		</div>
+	</div>
+</div>
