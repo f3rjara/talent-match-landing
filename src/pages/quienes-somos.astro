@@ -1,28 +1,49 @@
 ---
+import LottieAnimation from "@components/LottieAnimation.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import robotAnimation from "@assets/json/robot-group.json";
 ---
 
 <BaseLayout title="Quienes somos | Talento Match">
-	<section class="container mx-auto px-6 py-12 h-full">
-		<h1 class="text-3xl font-bold mb-8 text-center">Quienes somos</h1>
-		<article class="prose lg:prose-xl max-w-none">
-			<p>
-				Talento Match es una plataforma innovadora dedicada a conectar talentos con oportunidades
-				laborales ideales. Nuestra misión es facilitar el proceso de búsqueda de empleo tanto para
-				los candidatos como para las empresas, utilizando tecnología avanzada para asegurar un
-				matching efectivo.
+	<section
+		id="quienes-somos"
+		class="bg-contrast-section flex flex-col md:flex-row py-20"
+		aria-label="Conoce un poco mas de Talento Match">
+		<div class="image-section w-full md:w-1/2 flex items-center justify-center">
+			<LottieAnimation animationData={robotAnimation} className="w-full h-full max-w-md" />
+		</div>
+		<div class="px-6 md:px-12 lg:px-24 content-section w-full md:w-1/2">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-base-content mb-6">
+				<span class="accent-tm-cyan">Quienes</span>
+				<span class="accent-tm-blue">Somos</span>
+			</h2>
+			<p class="text-md mb-4 text-base-content/80 leading-relaxed">
+				En <span class="font-extrabold">Talento Match</span> utilizamos inteligencia artificial para
+				analizar perfiles y vacantes, identificando
+				<span class="italic font-semibold">
+					coincidencias precisas entre profesionales y empresas
+				</span>. Nuestro sistema procesa miles de datos en segundos y entrega conexiones de alta
+				calidad que optimizan todo el proceso de selección.
 			</p>
-			<p>
-				Fundada en [año de fundación], Talento Match ha crecido rápidamente gracias a nuestro
-				compromiso con la calidad y la satisfacción del usuario. Contamos con un equipo de
-				profesionales apasionados por ayudar a las personas a encontrar el trabajo de sus sueños y a
-				las empresas a descubrir el mejor talento disponible.
+			<p class="text-md mb-4 text-base-content/80 leading-relaxed">
+				Somos una plataforma diseñada para
+				<span class="accent-tm-cyan font-extrabold">mejorar la contratación</span>: ayudamos a las
+				empresas a encontrar perfiles alineados con sus necesidades y sugerimos candidatos basados
+				en
+				<span class="underline font-semibold">habilidades</span>,
+				<span class="underline font-semibold">experiencia</span> y
+				<span class="underline font-semibold">compatibilidad real</span>.
 			</p>
-			<p>
-				En Talento Match, creemos en la importancia de la diversidad, la inclusión y el desarrollo
-				profesional continuo. Nos esforzamos por crear un entorno donde todos los usuarios se
-				sientan valorados y apoyados en su camino hacia el éxito laboral.
+			<p class="text-md mb-4 text-base-content/80 leading-relaxed">
+				Nos enfocamos en ofrecer la
+				<span class="accent-tm-cyan font-extrabold"> mejor experiencia </span> tanto a quienes buscan
+				empleo como a quienes reclutan. Creemos que los procesos deben ser ágiles, eficientes y claros.
+				Por eso trabajamos para que
+				<span class="italic font-extrabold">
+					empresas y profesionales obtengan resultados acertados
+				</span>
+				en menos tiempo y con menos esfuerzo.
 			</p>
-		</article>
+		</div>
 	</section>
 </BaseLayout>

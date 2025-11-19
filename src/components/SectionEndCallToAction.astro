@@ -1,6 +1,13 @@
+---
+interface Props {
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
 <section
 	id="problematica"
-	class="py-20 px-6 md:px-12 lg:px-24 bg-base-100"
+	class:list={["py-20 px-6 md:px-12 lg:px-24", className || "bg-base-100"]}
 	aria-label="Solución para empresas y reclutadores">
 	<div class="max-w-4xl mx-auto space-y-8">
 		<!-- Problema -->

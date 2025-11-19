@@ -3,7 +3,6 @@ import "../styles/global.css";
 import TopNavBar from "@components/TopNavBar.astro";
 import Footer from "@components/Footer.astro";
 import { getAssetUrl } from "@utils/publicPaths";
-
 interface Props {
 	title: string;
 }
@@ -21,6 +20,7 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
+
 		<meta
 			name="description"
 			content="Encuentra el empleo ideal con Talent Match. Miles de empresas te buscan activamente. Asistente personal 24/7 que procesa cientos de ofertas y te conecta solo con vacantes que coinciden con tu experiencia y expectativas."
@@ -29,11 +29,8 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 			name="keywords"
 			content="búsqueda de empleo, ofertas laborales, trabajo ideal, vacantes, Talento Match, talent match, bolsa de empleo, matching laboral, oportunidades de trabajo"
 		/>
-		<meta name="author" content="Talento Match" />
-		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Talento Match" /><meta name="robots" content="index, follow" />
 		<link rel="canonical" href="https://talento-match.com" />
-
-		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://talento-match.com" />
 		<meta property="og:title" content="Talent Match - Encuentra el Trabajo de tus Sueños" />
@@ -44,9 +41,6 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 		<meta property="og:image" content="https://talento-match.com/og-image.jpg" />
 		<meta property="og:locale" content="es_ES" />
 		<meta property="og:site_name" content="Talent Match" />
-
-		<!-- Twitter -->
-		<!-- X (Twitter) -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content="https://talento-match.com" />
 		<meta name="twitter:title" content="Talent Match - Encuentra el Trabajo de tus Sueños" />
@@ -55,8 +49,6 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 			content="Asistente personal 24/7 que procesa cientos de ofertas laborales y te conecta solo con vacantes que coinciden con tu perfil."
 		/>
 		<meta name="twitter:image" content="https://talento-match.com/x-image.jpg" />
-
-		<!-- Schema.org Structured Data -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -79,7 +71,6 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 				}
 			}
 		</script>
-
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -95,6 +86,7 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 			}
 		</script>
 	</head>
+
 	<body class="base-layout">
 		<TopNavBar />
 		<main class="main-content-base-layout"><slot /></main>
@@ -110,4 +102,5 @@ const faviconUrl = getAssetUrl("/favicon.svg");
 <script>
 	import "flyonui/dist/collapse.js";
 	import "flyonui/dist/carousel.js";
+	import "flyonui/dist/accordion.js";
 </script>

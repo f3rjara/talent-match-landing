@@ -1,0 +1,130 @@
+---
+const faqItems = [
+	{
+		id: "funcionamiento-plataforma",
+		question: "¿Cómo funciona Talent Match para empresas y candidatos?",
+		answer:
+			"La plataforma analiza perfiles y vacantes con IA para identificar el mejor match. Las empresas publican sus necesidades y reciben candidatos sugeridos automáticamente, mientras que los profesionales pueden crear su perfil y recibir ofertas alineadas a su experiencia y habilidades.",
+		isActive: true,
+	},
+	{
+		id: "ventajas-empresa",
+		question: "¿Qué beneficios tiene para mi empresa usar Talent Match?",
+		answer:
+			"Tu empresa obtiene recomendaciones precisas basadas en IA, agiliza el proceso de selección, reduce tiempos de contratación y accede a una base de candidatos calificados filtrados según tus requerimientos específicos.",
+		isActive: false,
+	},
+	{
+		id: "beneficios-candidatos",
+		question: "¿Cómo ayuda la plataforma a quienes están buscando empleo?",
+		answer:
+			"Los candidatos pueden mostrar su perfil profesional, ganar visibilidad ante cientos de empresas y recibir ofertas que realmente coinciden con su trayectoria, habilidades y expectativas.",
+		isActive: false,
+	},
+	{
+		id: "planes-precios",
+		question: "¿Los planes tienen costos ocultos o comisiones adicionales?",
+		answer:
+			"No. Nuestros precios son completamente transparentes. Solo pagas el plan que elijas y obtienes acceso a todas las herramientas disponibles sin tarifas adicionales.",
+		isActive: false,
+	},
+	{
+		id: "seguridad-datos",
+		question: "¿Mi información está segura en Talent Match?",
+		answer:
+			"Sí. Protegemos todos los datos con estándares de seguridad de nivel empresarial. Tu información solo se usa para procesos de selección y nunca es compartida sin autorización.",
+		isActive: false,
+	},
+	{
+		id: "registro-uso",
+		question: "¿Necesito experiencia previa para usar la plataforma?",
+		answer:
+			"No. La plataforma es intuitiva tanto para empresas como para candidatos. Solo debes registrarte, completar tu información y la IA se encargará de sugerirte perfiles o vacantes que mejor se ajusten a tus necesidades.",
+		isActive: false,
+	},
+];
+---
+
+<div class="accordion accordion-shadow *:accordion-item-active:shadow-md max-w-3/4 m-auto">
+	{
+		faqItems.map((item, index) => (
+			<div
+				class={`accordion-item accordion-item-active:scale-[1.05] my-4 transition-transform ease-in duration-300 delay-[1ms] ${
+					index === 0
+						? "accordion-item-active:mb-6"
+						: index === faqItems.length - 1
+							? "accordion-item-active:my-8"
+							: "accordion-item-active:my-8"
+				} ${item.isActive ? "active" : ""}`}
+				id={`${item.id}-popout`}>
+				<button
+					class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start question-text font-medium"
+					aria-controls={`${item.id}-popout-collapse`}
+					aria-expanded={item.isActive ? "true" : "false"}>
+					<span class="icon-[tabler--plus] accordion-item-active:hidden question-icon size-4.5 block shrink-0" />
+					<span class="icon-[tabler--minus] accordion-item-active:block question-icon size-4.5 hidden shrink-0" />
+					{item.question}
+				</button>
+				<div
+					id={`${item.id}-popout-collapse`}
+					class={`accordion-content w-full overflow-hidden transition-[height] duration-300 ${item.isActive ? "" : "hidden"}`}
+					aria-labelledby={`${item.id}-popout`}
+					role="region">
+					<div class="px-5 pb-4">
+						<p class="answer-text font-normal">{item.answer}</p>
+					</div>
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<style>
+	@reference "tailwindcss";
+
+	/* Colores para modo claro (light mode) */
+	.accordion-item {
+		background-color: #ffffff;
+		border-radius: 0.5rem;
+		margin-bottom: 0.5rem;
+		@apply rounded-4xl;
+	}
+
+	.question-text {
+		color: #1f2937;
+	}
+
+	.question-icon {
+		color: #1f2937;
+	}
+
+	.answer-text {
+		color: #4b5563;
+	}
+
+	.accordion-content {
+		background-color: #f9fafb;
+	}
+
+	/* Colores para modo oscuro (dark mode) */
+	:global([data-theme="pastel"]) .accordion-item {
+		background-color: #1f2937;
+		border: 1px solid #374151;
+	}
+
+	:global([data-theme="pastel"]) .question-text {
+		color: #ffffff;
+	}
+
+	:global([data-theme="pastel"]) .question-icon {
+		color: #ffffff;
+	}
+
+	:global([data-theme="pastel"]) .answer-text {
+		color: #d1d5db;
+	}
+
+	:global([data-theme="pastel"]) .accordion-content {
+		background-color: #111827;
+	}
+</style>

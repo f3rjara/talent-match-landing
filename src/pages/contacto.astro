@@ -1,26 +1,102 @@
 ---
+import LottieAnimation from "@components/LottieAnimation.astro";
+import SingleCardContactInfo from "@components/SingleCardContactInfo.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getAssetUrl } from "@utils/publicPaths";
+import contactAnimation from "@assets/json/contact-user.json";
+import SectionEndCallToAction from "@components/SectionEndCallToAction.astro";
+
+const dataContact = [
+	{
+		icon: "brand-whatsapp",
+		title: "Chatee con nosotros",
+		text: "+57 (320) 000 0000",
+	},
+	{
+		icon: "mail",
+		title: "Escríbanos",
+		text: "contacto@talento-match.com",
+	},
+	{
+		icon: "world",
+		title: "Conózcanos",
+		text: "@talento-match",
+	},
+];
+
+const ImageDashboard = getAssetUrl("/images/example-dashboard.webp");
 ---
 
 <BaseLayout title="Contacto | Talento Match">
-	<section class="container mx-auto px-6 py-12">
-		<h1 class="text-4xl font-bold mb-8 text-center">Contacto</h1>
-		<article class="prose lg:prose-xl max-w-none">
-			<!-- Aquí va el contenido de contacto -->
-			<p>
-				Si tienes alguna pregunta, comentario o necesitas asistencia, no dudes en ponerte en
-				contacto con nosotros. Estamos aquí para ayudarte a encontrar el trabajo de tus sueños y
-				para apoyar a las empresas en la búsqueda del mejor talento.
-			</p>
-			<!-- Más secciones según sea necesario -->
+	<section class="container mx-auto px-6 py-12 md:max-w-3/4">
+		<p class="text-center text-xs mb-4">CONTACTA CON NOSOTROS</p>
+		<h1 class="text-4xl font-bold mb-8 text-center">
+			¿Tienes preguntas? <span class="accent-tm-cyan">¡Contáctanos!</span>
+		</h1>
+		<p class="text-center mb-4 md:max-w-3/4 mx-auto">
+			Nuestro equipo está listo para ayudarle; póngase en contacto con nosotros para obtener más
+			información sobre nuestros servicios y soluciones
+		</p>
+
+		<article class="grid grid-cols-1 xl:grid-cols-3 gap-4 my-14">
+			{
+				dataContact.map((contact) => (
+					<SingleCardContactInfo icon={contact.icon} title={contact.title} text={contact.text} />
+				))
+			}
 		</article>
+
+		<div class="prose lg:prose-xl max-w-none">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-1">
+				<div class="lg:col-span-2">
+					<img
+						src={ImageDashboard}
+						alt="Dashboard Plataforma"
+						class="w-full h-4/5 mt-[5%] object-cover rounded-4xl"
+					/>
+				</div>
+				<div class="lg:col-span-1">
+					<div class="card w-full min-h-96 lg:h-full bg-contrast-card rounded-2xl mt-0 lg:-ms-12">
+						<div class="card-body">
+							<LottieAnimation animationData={contactAnimation} className="w-full h-full m-auto" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<article id="asesoria">
 			<h2 class="text-3xl font-bold mb-4 mt-12 text-center">Asesoría</h2>
-			<p>
+			<p class="max-w-3/4 text-center m-auto">
 				Ofrecemos servicios de asesoría personalizados para ayudarte a optimizar tu perfil y mejorar
 				tus oportunidades laborales. Contáctanos para más información sobre nuestros servicios de
 				asesoría.
 			</p>
+			<!-- Boton a Whatsapp Ai web -->
+			<a
+				href="https://wa.me/573207072863?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20asesoría%20de%20Talento%20Match."
+				target="_blank"
+				rel="noopener noreferrer"
+				class="btn btn-gradient mt-6 hover:bg-base-100 m-auto flex w-fit hover:-translate-y-2 transition-transform duration-300">
+				Contactar Asesoría
+			</a>
 		</article>
 	</section>
+
+	<SectionEndCallToAction class="bg-contrast-section" />
 </BaseLayout>
+
+<style>
+	@reference "tailwindcss";
+	.bg-contrast-card {
+		@apply bg-zinc-700;
+		@apply shadow-xl;
+		@apply text-white;
+	}
+
+	[data-theme="pastel"] .bg-contrast-card {
+		@apply bg-gray-100;
+		@apply text-gray-900;
+		@apply shadow-xl;
+	}
+</style>

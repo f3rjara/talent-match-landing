@@ -1,27 +1,27 @@
 ---
+import SectionDataAnalysis from "@components/SectionDataAnalysis.astro";
+import SingleCardPricing from "@components/SingleCardPricing.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Precios Empresa | Talento Match">
-	<section class="container mx-auto px-6 py-12 h-full">
-		<h1 class="text-3xl font-bold mb-8 text-center">Precios para Empresas</h1>
-		<article class="prose lg:prose-xl max-w-none">
-			<p>
-				En Talento Match, ofrecemos planes de precios flexibles diseñados para satisfacer las
-				necesidades de las empresas que buscan el mejor talento. Nuestros planes incluyen opciones
-				para pequeñas, medianas y grandes empresas, con características adaptadas a cada tipo de
-				negocio.
-			</p>
-			<p>
-				Nuestros precios competitivos aseguran que obtengas el máximo valor por tu inversión.
-				Ofrecemos funcionalidades como acceso a nuestra base de datos de talentos, herramientas
-				avanzadas de matching impulsadas por IA, y soporte dedicado para ayudarte en cada paso del
-				proceso de reclutamiento.
-			</p>
-			<p>
-				Contáctanos para obtener una cotización personalizada y descubrir cómo Talento Match puede
-				transformar tu proceso de contratación.
-			</p>
-		</article>
+	<section class="container mx-auto px-6 py-12">
+		<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">
+			Precios sencillos y <span class="underline">transparentes</span>
+		</h1>
+		<p class="text-center max-w-2xl mx-auto mb-12 text-base md:text-lg">
+			Activa el plan que prefieras y accede a
+			<span class="font-bold">herramientas inteligentes</span>
+			diseñadas para ayudarte a captar perfiles realmente alineados
+			<span class="underline font-semibold">con tus vacantes.</span>
+		</p>
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto place-items-center">
+			<SingleCardPricing />
+			<SingleCardPricing />
+			<SingleCardPricing />
+		</div>
 	</section>
+
+	<SectionDataAnalysis />
 </BaseLayout>
